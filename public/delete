@@ -1,0 +1,5 @@
+npm install @tanstack/react-query @tanstack/react-query-devtools react-router-dom zustand axios react-hook-form @hookform/resolvers yup lucide-react clsx tailwindcss @tailwindcss/forms @tailwindcss/line-clamp
+
+npm install -D @types/node autoprefixer postcss
+
+npm install @tanstack/react-query @tanstack/react-query-devtools react-router-dom zustand axios react-hook-form @hookform/resolvers yup lucide-react clsx
