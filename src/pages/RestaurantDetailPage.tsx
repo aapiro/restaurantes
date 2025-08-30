@@ -4,8 +4,8 @@ import { ArrowLeft, Star, Clock, MapPin, Plus } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { useCartStore, useNotificationStore } from '../store';
-import { ROUTES, SUCCESS_MESSAGES } from '../constants';
+import { useCart } from '../hooks/useCart';
+import { ROUTES } from '../constants';
 import { Dish } from '../types';
 
 // Mock data para restaurante y platos
@@ -88,8 +88,7 @@ const dishCategories = [
 
 const RestaurantDetailPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
-    const { addItem, canAddItem } = useCartStore();
-    const { addNotification } = useNotificationStore();
+    const { addToCart } = useCart();
     const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
 
     // En producción, aquí harías la llamada a la API
@@ -101,37 +100,7 @@ const RestaurantDetailPage: React.FC = () => {
         : dishes;
 
     const handleAddToCart = (dish: Dish) => {
-        if (!canAddItem(dish.restaurantId)) {
-            addNotification({
-                type: 'warning',
-                title: 'Restaurante diferente',
-                message: 'Solo puedes ordenar de un restaurante a la vez. ¿Quieres limpiar tu carrito?',
-                duration: 6000,
-                action: {
-                    label: 'Limpiar carrito',
-                    onClick: () => {
-                        useCartStore.getState().clearCart();
-                        handleAddToCart(dish);
-                    }
-                }
-            });
-            return;
-        }
-
-        addItem({
-            dishId: dish.id,
-            dish,
-            quantity: 1,
-            unitPrice: dish.price,
-            restaurantId: dish.restaurantId,
-        });
-
-        addNotification({
-            type: 'success',
-            title: SUCCESS_MESSAGES.ITEM_ADDED_TO_CART,
-            message: `${dish.name} agregado al carrito`,
-            duration: 3000,
-        });
+        addToCart(dish, 1);
     };
 
     if (!restaurant) {

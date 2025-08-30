@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { Cart, CartItem, User, Address, Notification } from '../types';
+import { CartItem, User, Address, Notification } from '../types';
 import { CACHE_KEYS, ORDER_CONFIG } from '../constants';
 
 // ============= AUTH STORE =============
@@ -135,7 +135,7 @@ export const useCartStore = create<CartState & CartActions>()(
                     // Agregar nuevo item
                     const cartItem: CartItem = {
                         ...newItem,
-                        id: `cart_${Date.now()}_${Math.random()}`,
+                        id: `cart_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
                         totalPrice: newItem.quantity * newItem.unitPrice,
                     };
 
@@ -247,7 +247,7 @@ export const useNotificationStore = create<NotificationState & NotificationActio
     notifications: [],
 
     addNotification: (notification) => {
-        const id = `notification_${Date.now()}_${Math.random()}`;
+        const id = `notification_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
         const newNotification: Notification = {
             ...notification,
             id,

@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import RestaurantsPage from './pages/RestaurantsPage';
 import RestaurantDetailPage from './pages/RestaurantDetailPage';
+import CheckoutPage from './pages/CheckoutPage';
+import OrderDetailPage from './pages/OrderDetailPage';
 import { ROUTES } from './constants';
 
 // Páginas temporales simplificadas
@@ -22,16 +24,17 @@ function App() {
     return (
         <div className="App">
             <Routes>
-                {/* Rutas principales */}
+                {/* Rutas principales funcionando */}
                 <Route path={ROUTES.HOME} element={<HomePage />} />
                 <Route path={ROUTES.RESTAURANTS} element={<RestaurantsPage />} />
                 <Route path="/restaurants/:id" element={<RestaurantDetailPage />} />
+                <Route path={ROUTES.CHECKOUT} element={<CheckoutPage />} />
+                <Route path="/orders/:id" element={<OrderDetailPage />} />
 
                 {/* Páginas temporales */}
                 <Route path={ROUTES.LOGIN} element={<PlaceholderPage title="Iniciar Sesión" />} />
                 <Route path={ROUTES.REGISTER} element={<PlaceholderPage title="Registrarse" />} />
                 <Route path={ROUTES.CART} element={<PlaceholderPage title="Carrito" />} />
-                <Route path={ROUTES.CHECKOUT} element={<PlaceholderPage title="Checkout" />} />
                 <Route path={ROUTES.ORDERS} element={<PlaceholderPage title="Mis Pedidos" />} />
                 <Route path={ROUTES.PROFILE} element={<PlaceholderPage title="Mi Perfil" />} />
                 <Route path={ROUTES.SEARCH} element={<PlaceholderPage title="Búsqueda" />} />

@@ -10,7 +10,8 @@ import { ROUTES, APP_CONFIG } from '../../constants';
 const Header: React.FC = () => {
     const navigate = useNavigate();
     const { user, isAuthenticated, logout } = useAuthStore();
-    const { getItemCount, getTotal, openCart } = useCartStore();
+    const cartStore = useCartStore();
+    const { getItemCount, getTotal } = cartStore;
     const [searchQuery, setSearchQuery] = React.useState('');
 
     const handleSearch = (e: React.FormEvent) => {
@@ -22,7 +23,7 @@ const Header: React.FC = () => {
 
     const handleCartClick = () => {
         if (getItemCount() > 0) {
-            openCart();
+            cartStore.openCart();
         }
     };
 
@@ -169,7 +170,7 @@ const Header: React.FC = () => {
 
             {/* Mini carrito flotante */}
             {getItemCount() > 0 && (
-                <div className="fixed bottom-4 right-4 z-50">
+                <div className="fixed bottom-4 right-4 z-40">
                     <button
                         onClick={handleCartClick}
                         className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-3 transition-all duration-300 hover:scale-105"

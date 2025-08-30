@@ -117,12 +117,12 @@ export const useCart = () => {
             return;
         }
 
-        cartStore.updateQuantity(itemId, newQuantity);
+        cartStore.updateQuantity(itemId, newQuantity); // Usar la función del store
     };
 
     // Función para remover del carrito
     const removeFromCart = (itemId: string) => {
-        cartStore.removeItem(itemId);
+        cartStore.removeItem(itemId); // Usar removeItem del store
         addNotification({
             type: 'info',
             title: 'Producto eliminado',

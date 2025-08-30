@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import CartSidebar from '../common/CartSidebar';
 import { ToastContainer } from '../ui/Toast';
 
 interface LayoutProps {
@@ -15,6 +16,9 @@ const Layout: React.FC<LayoutProps> = ({ children, className }) => {
             <main className={`flex-1 ${className || ''}`}>
                 {children}
             </main>
+
+            {/* Carrito lateral */}
+            <CartSidebar />
 
             {/* Sistema de notificaciones */}
             <ToastContainer />
