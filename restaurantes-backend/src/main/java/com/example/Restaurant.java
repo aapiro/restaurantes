@@ -3,6 +3,7 @@ package com.example;
 import io.quarkus.hibernate.orm.panache.MappingTo;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 @Entity
@@ -88,7 +89,16 @@ public class Restaurant {
     }
 
     public void setRating(BigDecimal rating) {
-        this.rating = rating;
+        if (rating != null) {
+            // Validate rating is between 0 and 5
+            if (rating.compareTo(BigDecimal.ZERO) < 0 || rating.compareTo(new BigDecimal("5.0")) > 0) {
+                throw new IllegalArgumentException("Rating must be between 0 and 5");
+            }
+            // Round to 1 decimal place
+            this.rating = rating.setScale(1, RoundingMode.HALF_UP);
+        } else {
+            this.rating = null;
+        }
     }
 
     public int getReviewCount() {
