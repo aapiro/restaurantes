@@ -307,3 +307,239 @@ export interface Notification {
         onClick: () => void;
     };
 }
+
+// ============= ADMIN SYSTEM =============
+
+export interface Admin {
+    id: number;
+    email: string;
+    name: string;
+    avatar?: string;
+    role: AdminRole;
+    permissions: AdminPermission[];
+    isActive: boolean;
+    lastLogin?: string;
+    createdAt: string;
+    updatedAt: string;
+}
+
+export enum AdminRole {
+    SUPER_ADMIN = 'SUPER_ADMIN',
+    ADMIN = 'ADMIN',
+    MANAGER = 'MANAGER',
+    MODERATOR = 'MODERATOR'
+}
+
+export enum AdminPermission {
+    // Restaurantes
+    VIEW_RESTAURANTS = 'VIEW_RESTAURANTS',
+    CREATE_RESTAURANTS = 'CREATE_RESTAURANTS',
+    EDIT_RESTAURANTS = 'EDIT_RESTAURANTS',
+    DELETE_RESTAURANTS = 'DELETE_RESTAURANTS',
+    MANAGE_RESTAURANT_STATUS = 'MANAGE_RESTAURANT_STATUS',
+    
+    // Platos
+    VIEW_DISHES = 'VIEW_DISHES',
+    CREATE_DISHES = 'CREATE_DISHES',
+    EDIT_DISHES = 'EDIT_DISHES',
+    DELETE_DISHES = 'DELETE_DISHES',
+    MANAGE_DISH_AVAILABILITY = 'MANAGE_DISH_AVAILABILITY',
+    
+    // Pedidos
+    VIEW_ORDERS = 'VIEW_ORDERS',
+    MANAGE_ORDER_STATUS = 'MANAGE_ORDER_STATUS',
+    CANCEL_ORDERS = 'CANCEL_ORDERS',
+    REFUND_ORDERS = 'REFUND_ORDERS',
+    
+    // Usuarios
+    VIEW_USERS = 'VIEW_USERS',
+    EDIT_USERS = 'EDIT_USERS',
+    DEACTIVATE_USERS = 'DEACTIVATE_USERS',
+    DELETE_USERS = 'DELETE_USERS',
+    
+    // Categorías
+    VIEW_CATEGORIES = 'VIEW_CATEGORIES',
+    CREATE_CATEGORIES = 'CREATE_CATEGORIES',
+    EDIT_CATEGORIES = 'EDIT_CATEGORIES',
+    DELETE_CATEGORIES = 'DELETE_CATEGORIES',
+    
+    // Reportes
+    VIEW_ANALYTICS = 'VIEW_ANALYTICS',
+    EXPORT_REPORTS = 'EXPORT_REPORTS',
+    
+    // Sistema
+    MANAGE_ADMINS = 'MANAGE_ADMINS',
+    SYSTEM_SETTINGS = 'SYSTEM_SETTINGS'
+}
+
+export interface AdminLoginForm {
+    email: string;
+    password: string;
+    rememberMe?: boolean;
+}
+
+export interface AdminLoginResponse {
+    admin: Admin;
+    token: string;
+    refreshToken: string;
+    expiresIn: number;
+}
+
+// ============= ADMIN DASHBOARD =============
+
+export interface DashboardStats {
+    totalRestaurants: number;
+    activeRestaurants: number;
+    totalOrders: number;
+    todayOrders: number;
+    totalUsers: number;
+    activeUsers: number;
+    totalRevenue: number;
+    todayRevenue: number;
+    averageOrderValue: number;
+    popularRestaurants: PopularRestaurant[];
+    recentOrders: Order[];
+    ordersByStatus: OrderStatusCount[];
+    revenueByMonth: RevenueByMonth[];
+}
+
+export interface PopularRestaurant {
+    restaurant: Restaurant;
+    orderCount: number;
+    revenue: number;
+}
+
+export interface OrderStatusCount {
+    status: OrderStatus;
+    count: number;
+    percentage: number;
+}
+
+export interface RevenueByMonth {
+    month: string;
+    revenue: number;
+    orderCount: number;
+}
+
+// ============= ADMIN FILTERS =============
+
+export interface AdminRestaurantFilters {
+    search?: string;
+    category?: string;
+    status?: 'active' | 'inactive';
+    isOpen?: boolean;
+    city?: string;
+    sortBy?: 'name' | 'createdAt' | 'rating' | 'orderCount';
+    sortOrder?: 'asc' | 'desc';
+}
+
+export interface AdminOrderFilters {
+    search?: string;
+    status?: OrderStatus;
+    restaurantId?: number;
+    userId?: number;
+    dateFrom?: string;
+    dateTo?: string;
+    minAmount?: number;
+    maxAmount?: number;
+    paymentMethod?: PaymentMethod;
+    sortBy?: 'createdAt' | 'total' | 'status';
+    sortOrder?: 'asc' | 'desc';
+}
+
+export interface AdminUserFilters {
+    search?: string;
+    status?: 'active' | 'inactive';
+    registeredFrom?: string;
+    registeredTo?: string;
+    hasOrders?: boolean;
+    sortBy?: 'name' | 'createdAt' | 'lastOrder';
+    sortOrder?: 'asc' | 'desc';
+}
+
+// ============= ADMIN FORMS =============
+
+export interface RestaurantForm {
+    name: string;
+    description: string;
+    address: string;
+    phone: string;
+    email: string;
+    categoryId: number;
+    deliveryTime: string;
+    deliveryFee: number;
+    minimumOrder: number;
+    isActive: boolean;
+    logo?: File;
+    coverImage?: File;
+}
+
+export interface DishForm {
+    restaurantId: number;
+    categoryId: number;
+    name: string;
+    description: string;
+    price: number;
+    originalPrice?: number;
+    preparationTime: number;
+    ingredients: string[];
+    allergens: string[];
+    isAvailable: boolean;
+    isPopular: boolean;
+    image?: File;
+    images?: File[];
+}
+
+export interface CategoryForm {
+    name: string;
+    slug: string;
+    icon: string;
+    restaurantId?: number; // Para categorías de platos
+}
+
+// ============= ADMIN REPORTS =============
+
+export interface SalesReport {
+    period: 'day' | 'week' | 'month' | 'year';
+    startDate: string;
+    endDate: string;
+    totalRevenue: number;
+    totalOrders: number;
+    averageOrderValue: number;
+    topRestaurants: PopularRestaurant[];
+    topDishes: PopularDish[];
+    revenueByDay: DailyRevenue[];
+}
+
+export interface PopularDish {
+    dish: Dish;
+    orderCount: number;
+    revenue: number;
+}
+
+export interface DailyRevenue {
+    date: string;
+    revenue: number;
+    orderCount: number;
+}
+
+export interface UserReport {
+    totalUsers: number;
+    newUsersThisMonth: number;
+    activeUsers: number;
+    usersByMonth: UsersByMonth[];
+    topCustomers: TopCustomer[];
+}
+
+export interface UsersByMonth {
+    month: string;
+    newUsers: number;
+    totalUsers: number;
+}
+
+export interface TopCustomer {
+    user: User;
+    totalOrders: number;
+    totalSpent: number;
+    lastOrderDate: string;
+}

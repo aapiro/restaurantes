@@ -1,0 +1,249 @@
+
+> delivery-frontend@0.1.0 start
+> react-scripts start
+
+(node:14923) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:14923) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view delivery-frontend in the browser.
+
+  Local:            http://localhost:12000
+  On Your Network:  http://10.2.15.12:12000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:30:  'admin' is assigned a value but never used            @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 22:30:  'admin' is assigned a value but never used            @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/index.tsx
+  Line 4:10:  'ReactQueryDevtools' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/index.tsx
+  Line 4:10:  'ReactQueryDevtools' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/admin/layout/AdminLayout.tsx
+  Line 2:10:  'Navigate' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 6:10:  'ROUTES' is defined but never used    @typescript-eslint/no-unused-vars
+
+src/index.tsx
+  Line 4:10:  'ReactQueryDevtools' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/admin/layout/AdminLayout.tsx
+  Line 2:10:  'Navigate' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 6:10:  'ROUTES' is defined but never used    @typescript-eslint/no-unused-vars
+
+src/index.tsx
+  Line 4:10:  'ReactQueryDevtools' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/admin/layout/AdminLayout.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 6:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 15:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:41:  'admin' is assigned a value but never used            @typescript-eslint/no-unused-vars
+
+src/index.tsx
+  Line 4:10:  'ReactQueryDevtools' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/admin/layout/AdminLayout.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 6:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 15:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:41:  'admin' is assigned a value but never used            @typescript-eslint/no-unused-vars
+
+src/index.tsx
+  Line 4:10:  'ReactQueryDevtools' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/admin/layout/AdminLayout.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 6:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 15:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:41:  'admin' is assigned a value but never used            @typescript-eslint/no-unused-vars
+
+src/components/admin/layout/AdminSidebar.tsx
+  Line 85:13:  'hasPermission' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/index.tsx
+  Line 4:10:  'ReactQueryDevtools' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/admin/common/ProtectedRoute.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 5:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 22:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/components/admin/layout/AdminLayout.tsx
+  Line 2:10:   'Navigate' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 6:10:   'ROUTES' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 15:13:  'isAuthenticated' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 15:41:  'admin' is assigned a value but never used            @typescript-eslint/no-unused-vars
+
+src/components/admin/layout/AdminSidebar.tsx
+  Line 85:13:  'hasPermission' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/index.tsx
+  Line 4:10:  'ReactQueryDevtools' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.

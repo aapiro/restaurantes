@@ -198,6 +198,16 @@ class ApiService {
 
         return response.data;
     }
+
+    // ============= TOKEN UTILITIES =============
+
+    setAuthToken(token: string): void {
+        this.api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    }
+
+    removeAuthToken(): void {
+        delete this.api.defaults.headers.common['Authorization'];
+    }
 }
 
 // Crear instancia única del servicio API
@@ -212,4 +222,6 @@ export const api = {
     delete: <T>(url: string, config?: AxiosRequestConfig) => apiService.delete<T>(url, config),
     uploadFile: (url: string, file: File, onProgress?: (progress: number) => void) =>
         apiService.uploadFile(url, file, onProgress),
+    setAuthToken: (token: string) => apiService.setAuthToken(token),
+    removeAuthToken: () => apiService.removeAuthToken(),
 };

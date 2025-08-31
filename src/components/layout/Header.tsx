@@ -117,6 +117,12 @@ const Header: React.FC = () => {
                                             Direcciones
                                         </Link>
                                         <hr className="my-2" />
+                                        <Link
+                                            to={ROUTES.ADMIN.LOGIN}
+                                            className="block px-4 py-2 text-sm text-gray-500 hover:bg-gray-100 transition-colors"
+                                        >
+                                            Panel Admin
+                                        </Link>
                                         <button
                                             onClick={handleLogout}
                                             className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
