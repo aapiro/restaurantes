@@ -66,6 +66,66 @@ export const API_ENDPOINTS = {
         PROCESS: '/payments/process',
         WEBHOOK: '/payments/webhook',
     },
+
+    // Admin
+    ADMIN: {
+        LOGIN: '/admin/auth/login',
+        LOGOUT: '/admin/auth/logout',
+        REFRESH: '/admin/auth/refresh',
+        PROFILE: '/admin/auth/profile',
+        
+        // Dashboard
+        DASHBOARD: '/admin/dashboard',
+        STATS: '/admin/dashboard/stats',
+        
+        // Restaurants Management
+        RESTAURANTS: '/admin/restaurants',
+        RESTAURANT_DETAIL: (id: number) => `/admin/restaurants/${id}`,
+        RESTAURANT_CREATE: '/admin/restaurants',
+        RESTAURANT_UPDATE: (id: number) => `/admin/restaurants/${id}`,
+        RESTAURANT_DELETE: (id: number) => `/admin/restaurants/${id}`,
+        RESTAURANT_TOGGLE_STATUS: (id: number) => `/admin/restaurants/${id}/toggle-status`,
+        
+        // Dishes Management
+        DISHES: '/admin/dishes',
+        DISH_DETAIL: (id: number) => `/admin/dishes/${id}`,
+        DISH_CREATE: '/admin/dishes',
+        DISH_UPDATE: (id: number) => `/admin/dishes/${id}`,
+        DISH_DELETE: (id: number) => `/admin/dishes/${id}`,
+        DISH_TOGGLE_AVAILABILITY: (id: number) => `/admin/dishes/${id}/toggle-availability`,
+
+        // Categories Management
+        CATEGORIES: '/admin/categories',
+        CATEGORY_DETAIL: (id: number) => `/admin/categories/${id}`,
+        CATEGORY_CREATE: '/admin/categories',
+        CATEGORY_UPDATE: (id: number) => `/admin/categories/${id}`,
+        CATEGORY_DELETE: (id: number) => `/admin/categories/${id}`,
+        CATEGORY_TOGGLE_STATUS: (id: number) => `/admin/categories/${id}/toggle-status`,
+        
+        // Orders Management
+        ORDERS: '/admin/orders',
+        ORDER_DETAIL: (id: number) => `/admin/orders/${id}`,
+        ORDER_UPDATE_STATUS: (id: number) => `/admin/orders/${id}/status`,
+        ORDER_CANCEL: (id: number) => `/admin/orders/${id}/cancel`,
+        ORDER_REFUND: (id: number) => `/admin/orders/${id}/refund`,
+        
+        // Users Management
+        USERS: '/admin/users',
+        USER_DETAIL: (id: number) => `/admin/users/${id}`,
+        USER_UPDATE: (id: number) => `/admin/users/${id}`,
+        USER_TOGGLE_STATUS: (id: number) => `/admin/users/${id}/toggle-status`,
+        USER_DELETE: (id: number) => `/admin/users/${id}`,
+        
+        // Reports
+        REPORTS: '/admin/reports',
+        SALES_REPORT: '/admin/reports/sales',
+        USERS_REPORT: '/admin/reports/users',
+        EXPORT_REPORT: '/admin/reports/export',
+        
+        // System
+        ADMINS: '/admin/system/admins',
+        SETTINGS: '/admin/system/settings',
+    },
 } as const;
 
 // ============= APP CONFIGURATION =============
@@ -215,6 +275,48 @@ export const ROUTES = {
     HELP: '/help',
     TERMS: '/terms',
     PRIVACY: '/privacy',
+
+    // Admin Routes
+    ADMIN: {
+        LOGIN: '/admin/login',
+        DASHBOARD: '/admin',
+        
+        // Restaurants
+        RESTAURANTS: '/admin/restaurants',
+        RESTAURANT_DETAIL: (id: number) => `/admin/restaurants/${id}`,
+        RESTAURANT_CREATE: '/admin/restaurants/create',
+        RESTAURANT_EDIT: (id: number) => `/admin/restaurants/${id}/edit`,
+        
+        // Dishes
+        DISHES: '/admin/dishes',
+        DISH_DETAIL: (id: number) => `/admin/dishes/${id}`,
+        DISH_CREATE: '/admin/dishes/create',
+        DISH_EDIT: (id: number) => `/admin/dishes/${id}/edit`,
+
+        // Categories
+        CATEGORIES: '/admin/categories',
+        CATEGORY_DETAIL: (id: number) => `/admin/categories/${id}`,
+        CATEGORY_CREATE: '/admin/categories/create',
+        CATEGORY_EDIT: (id: number) => `/admin/categories/${id}/edit`,
+        
+        // Orders
+        ORDERS: '/admin/orders',
+        ORDER_DETAIL: (id: number) => `/admin/orders/${id}`,
+        
+        // Users
+        USERS: '/admin/users',
+        USER_DETAIL: (id: number) => `/admin/users/${id}`,
+        
+        // Reports
+        REPORTS: '/admin/reports',
+        SALES_REPORT: '/admin/reports/sales',
+        USERS_REPORT: '/admin/reports/users',
+        
+        // System
+        ADMINS: '/admin/system/admins',
+        SETTINGS: '/admin/system/settings',
+        PROFILE: '/admin/profile',
+    },
 } as const;
 
 // ============= ERROR MESSAGES =============

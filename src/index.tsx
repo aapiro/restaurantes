@@ -16,10 +16,10 @@ root.render(
         <QueryClientProvider client={queryClient}>
             <BrowserRouter>
                 <App />
-                {/* React Query DevTools - solo en desarrollo */}
-                {process.env.NODE_ENV === 'development' && (
+                {/* React Query DevTools - temporalmente deshabilitado por error de locale */}
+                {/* {process.env.NODE_ENV === 'development' && (
                     <ReactQueryDevtools initialIsOpen={false} />
-                )}
+                )} */}
             </BrowserRouter>
         </QueryClientProvider>
     </React.StrictMode>
