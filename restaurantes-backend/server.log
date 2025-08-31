@@ -1,0 +1,7 @@
+__  ____  __  _____   ___  __ ____  ______ 
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/ 
+ -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \   
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/   
+2025-08-31 04:03:05,420 INFO  [io.quarkus] (main) restaurantes-backend 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.26.1) started in 0.965s. Listening on: http://0.0.0.0:53715
+2025-08-31 04:03:05,423 INFO  [io.quarkus] (main) Profile prod activated. 
+2025-08-31 04:03:05,424 INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jackson, smallrye-context-propagation, vertx]
