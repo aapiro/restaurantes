@@ -148,6 +148,20 @@ Todos los endpoints administrativos están prefijados con `/admin`:
 - Tablas con scroll horizontal
 - Diseño adaptativo para todas las pantallas
 
+## Performance Considerations
+
+### Frontend Optimization
+- Implement lazy loading for components that are not immediately visible
+- Use React.memo() to prevent unnecessary re-renders of components
+- Optimize API calls by batching or debouncing when possible
+- Implement pagination for large datasets in tables
+
+### Backend Optimization
+- Ensure proper indexing on database columns used in queries
+- Implement caching mechanisms for frequently accessed data
+- Optimize slow queries with EXPLAIN and adjust as needed
+- Consider implementing rate limiting for API endpoints
+
 ## Próximas Características
 - [ ] Gestión completa de platos y categorías
 - [ ] Sistema de notificaciones en tiempo real
