@@ -48,18 +48,37 @@ npm start
 
 ```
 src/
-├── components/           # Componentes reutilizables
-│   ├── ui/              # Componentes UI básicos (Button, Input, Card)
-│   ├── layout/          # Componentes de layout (Header, Footer)
-│   └── common/          # Componentes comunes específicos del dominio
-├── pages/               # Páginas/Rutas principales
-├── hooks/               # Custom hooks
-├── services/            # Servicios API y configuración
-├── store/               # Stores de Zustand
-├── types/               # Definiciones TypeScript
-├── constants/           # Constantes de la aplicación
-├── utils/               # Funciones utilitarias
-└── assets/              # Recursos estáticos
+├── components/
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   ├── Input.tsx
+│   │   ├── Card.tsx
+│   │   ├── Toast.tsx
+│   │   └── index.ts
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   └── Layout.tsx
+│   └── common/
+│       └── CartSidebar.tsx
+├── pages/
+│   ├── HomePage.tsx
+│   ├── RestaurantsPage.tsx
+│   ├── RestaurantDetailPage.tsx
+│   ├── CheckoutPage.tsx
+│   └── OrderDetailPage.tsx
+├── hooks/
+│   ├── useCart.ts
+│   └── index.ts
+├── services/
+│   └── queryClient.ts
+├── store/
+│   └── index.ts ← ARCHIVO CRÍTICO
+├── types/
+│   └── index.ts ← ARCHIVO CRÍTICO  
+├── constants/
+│   └── index.ts ← ARCHIVO CRÍTICO
+├── App.tsx
+└── index.tsx
 ```
 
 ## 🎯 Funcionalidades Principales
