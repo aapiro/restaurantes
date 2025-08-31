@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <!-- Insert sample categories -->
+    <changeSet id="1" author="openhands">
+        <insert tableName="categories">
+            <column name="name" value="Italian"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="name" value="Spanish"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="name" value="Japanese"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="name" value="Pizza"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="name" value="Burgers"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="name" value="Mexican"/>
+        </insert>
+    </changeSet>
+
+    <!-- Insert sample restaurants -->
+    <changeSet id="2" author="openhands">
+        <insert tableName="restaurants">
+            <column name="name" value="La Tagliatella"/>
+            <column name="description" value="Authentic Italian cuisine with fresh pasta and traditional recipes"/>
+            <column name="cuisine_type" value="Italian"/>
+            <column name="rating" value="4.5"/>
+            <column name="review_count" value="234"/>
+            <column name="delivery_time_min" value="20"/>
+            <column name="delivery_time_max" value="35"/>
+            <column name="delivery_fee" value="2.99"/>
+            <column name="minimum_order" value="12.00"/>
+            <column name="is_open" value="true"/>
+            <column name="image_url" value="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=400&h=250&fit=crop"/>
+        </insert>
+        <insert tableName="restaurants">
+            <column name="name" value="El Rincon de Juan"/>
+            <column name="description" value="Traditional Spanish tapas and paella in a cozy atmosphere"/>
+            <column name="cuisine_type" value="Spanish"/>
+            <column name="rating" value="4.3"/>
+            <column name="review_count" value="189"/>
+            <column name="delivery_time_min" value="25"/>
+            <column name="delivery_time_max" value="40"/>
+            <column name="delivery_fee" value="3.50"/>
+            <column name="minimum_order" value="15.00"/>
+            <column name="is_open" value="true"/>
+            <column name="image_url" value="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=250&fit=crop"/>
+        </insert>
+        <insert tableName="restaurants">
+            <column name="name" value="Sushi Time"/>
+            <column name="description" value="Fresh sushi and Japanese specialties with a modern twist"/>
+            <column name="cuisine_type" value="Japanese"/>
+            <column name="rating" value="4.8"/>
+            <column name="review_count" value="156"/>
+            <column name="delivery_time_min" value="30"/>
+            <column name="delivery_time_max" value="45"/>
+            <column name="delivery_fee" value="3.99"/>
+            <column name="minimum_order" value="20.00"/>
+            <column name="is_open" value="false"/>
+            <column name="image_url" value="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=250&fit=crop"/>
+        </insert>
+    </changeSet>
+
+    <!-- Associate restaurants with categories -->
+    <changeSet id="3" author="openhands">
+        <insert tableName="restaurant_categories">
+            <column name="restaurant_id" value="1"/>
+            <column name="category_id" value="1"/> <!-- Italian -->
+        </insert>
+        <insert tableName="restaurant_categories">
+            <column name="restaurant_id" value="2"/>
+            <column name="category_id" value="2"/> <!-- Spanish -->
+        </insert>
+        <insert tableName="restaurant_categories">
+            <column name="restaurant_id" value="3"/>
+            <column name="category_id" value="3"/> <!-- Japanese -->
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
