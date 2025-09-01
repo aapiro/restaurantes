@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <!-- Create restaurants table -->
+    <changeSet id="1" author="openhands">
+        <createTable tableName="restaurants">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="text"/>
+            <column name="cuisine_type" type="varchar(100)"/>
+            <column name="rating" type="decimal(3,1)" defaultValueNumeric="0.0"/>
+            <column name="review_count" type="int" defaultValueNumeric="0"/>
+            <column name="delivery_time_min" type="int"/>
+            <column name="delivery_time_max" type="int"/>
+            <column name="delivery_fee" type="decimal(5,2)" defaultValueNumeric="0.00"/>
+            <column name="minimum_order" type="decimal(6,2)" defaultValueNumeric="0.00"/>
+            <column name="is_open" type="boolean" defaultValueBoolean="true"/>
+            <column name="image_url" type="varchar(512)"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Create dishes table -->
+    <changeSet id="2" author="openhands">
+        <createTable tableName="dishes">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="restaurant_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_dish_restaurant"
+                             references="restaurants(id)"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="text"/>
+            <column name="price" type="decimal(6,2)" defaultValueNumeric="0.00"/>
+            <column name="image_url" type="varchar(512)"/>
+            <column name="is_available" type="boolean" defaultValueBoolean="true"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Create categories table -->
+    <changeSet id="3" author="openhands">
+        <createTable tableName="categories">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Create restaurant_categories table -->
+    <changeSet id="4" author="openhands">
+        <createTable tableName="restaurant_categories">
+            <column name="restaurant_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_restaurant_category"
+                             references="restaurants(id)"/>
+            </column>
+            <column name="category_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_category_restaurant"
+                             references="categories(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
